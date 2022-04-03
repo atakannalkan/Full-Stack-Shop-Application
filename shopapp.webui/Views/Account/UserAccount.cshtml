@@ -1,0 +1,103 @@
+@model UserViewModel
+
+<div class="container mb-5 pb-5">
+    <h2>Hesap Detayları</h2>    
+    <hr>
+
+    @if (TempData["message"] != null)
+    {
+        var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+        @await Html.PartialAsync("_alert", message);
+    }
+
+    @if (Model.User.EmailConfirmed == false)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-exclamation-circle-fill text-danger mb-1" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg>
+            <h5 class="d-inline">Dikkat ! Hesabınız onaylı değil</h5>
+            <p class="mt-2">
+                <form asp-controller="Account" asp-action="UserAccountConfirmEmail" method="post" class="d-inline">
+                    Email hesabınız onaylı değil, Hesabınızı onaylamak için                 
+                    <button type="submit" class="btn btn-link p-0 mb-1">Buraya</button>
+                    tıklayınız
+                </form> 
+            </p>
+            <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }    
+
+    @if (Model == null)
+    {
+        <div class="row">
+            <div class="col-md-6 pt-4">
+                @if (TempData["message"] != null)
+                {
+                    var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                    @await Html.PartialAsync("_alert", message);
+                }
+                <div class="mt-4 mb-3">
+                    <a href="/" class="btn btn-secondary me-1"><i class="fas fa-arrow-circle-left"></i> Geriye Dön</a>
+                    <a href="/account/login" class="btn btn-primary me-2"><i class="fas fa-sign-in-alt"></i> Giriş Yap</a>
+                </div>                
+            </div>
+
+            <div class="col-md-6">
+                <img src="/img/svg/404.svg" alt="404 Not Found" class="w-100">
+            </div>
+        </div>
+
+    } else {
+        <div class="row mt-4 userInformation border rounded-3">
+            <div class="col-md-4 userColumn bg-primary rounded-3 pb-3 pb-md-5">
+                <div class="informationImage">
+                    <img src="/img/icon/user_account_icon.png" alt="User Image">
+                </div>
+                <h6 class="text-white pb-md-5">@($"{Model.User.FirstName} {Model.User.LastName}")</h6> @*Repsonnsive padding class*@
+            </div>
+            <div class="col-md-8 py-2">
+                <div class="row informationBody">
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <h5>Ad Soyad</h5>
+                        <span>@($"{Model.User.FirstName} {Model.User.LastName}")</span>
+                    </div>
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <h5>Kullanıcı Adı</h5>
+                        <span>@Model.User.UserName</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5>Üyelik Tarihi</h5>
+                        <span>@Model.User.DateTime</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row informationfooter pb-4">
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <h5>Email</h5>
+                        <span>@Model.User.Email</span>
+                    </div>
+                    <div class="col-sm-4 mb-3 mb-sm-0 text-sm-center">
+                        <h5>Email Onayı</h5>
+                        <span>                            
+                            @if (Model.User.EmailConfirmed)
+                            {
+                                <span>Onaylı <i class="bi bi-check-circle-fill text-success myBootstrapIcon"></i></span>
+                            } else {
+                                <span>Onaylı Değil <i class="bi bi-x-circle-fill text-danger myBootstrapIcon"></i></span>
+                            }
+                        </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5>Roller</h5>
+                        @foreach (var item in Model.UserRoles)
+                        {
+                            <span class="badge bg-primary">@item.ToString()</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    } 
+    
+</div>

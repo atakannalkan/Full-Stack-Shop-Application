@@ -1,0 +1,27 @@
+@model Product
+
+<div class="card productCard mb-3">
+    <a href="/product/@Model.Url">    
+        <img src="/img/@Model.ImageUrl" class="img-fluid">
+    </a>
+    
+    <div class="card-body">
+        <a href="/product/@Model.Url" class="cardLinkButton" style="color: black;">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Price TL</p>
+
+            @await Html.PartialAsync("_productRating", Model)
+        </a>
+    </div>    
+
+    <div class="card-footer">
+        
+            <form asp-controller="Shop" asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@Model.ProductId">
+                <input type="hidden" name="quantity" value="1">
+                <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-sm btnAddCart">Sepete Ekle</button>
+                </div>
+            </form>
+    </div>
+</div>

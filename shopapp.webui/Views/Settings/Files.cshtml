@@ -1,0 +1,158 @@
+@model ImageViewModel
+
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container">
+    <h2>Admin Files</h2>
+    <hr>
+
+    <div class="row my-5">
+        <div class="col-md-3 mb-4 mb-md-0">
+            <ul class="list-group">
+                <a href="/admin/settings" class="list-group-item">Slider</a>
+                <a href="/admin/settings/arrangement" class="list-group-item">Number</a>
+                <a href="/admin/settings/files" class="list-group-item active">Files</a>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-12">
+                    @if (TempData["message"] != null)
+                    {
+                        var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                        @await Html.PartialAsync("_alert", message);
+                    }
+                </div>
+            </div>
+            
+            <h3>Index Images</h3>
+            <hr>            
+
+            <form asp-controller="Settings" asp-action="AddIndexImage" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="fileLocation" value="wwwroot\\img">
+                <div class="row mb-3">
+                    <div class="col-md-9">
+                        <input type="file" class="form-control" id="formFile" name="file">
+                    </div>
+                    <div class="col-md-3 sm-btn-sm mt-md-0 mt-3">
+                        <button type="submit" class="btn btn-primary @(User.IsInRole("admin")?"":"disabled")"><i class="fas fa-images"></i> Add Image</button>
+                    </div>                    
+                </div>
+            </form>
+
+            <form asp-controller="Settings" asp-action="DeleteIndexImage" method="post">
+                <input type="hidden" name="fileLocation" value="wwwroot/img/">
+                <div class="col-12 d-flex flex-wrap">
+                    @foreach (var item in Model.IndexImageUrl)
+                    {
+                        <div class="form-check border rounded-2 me-1" style="width: 90px;">
+                            <label for="@item" class="w-100" style="margin-left: 0px;">@(item.Length>6?item.Substring(0,5)+"...":item)<img src="/img/@item" class="w-100"></label>
+                            <input type="checkbox" name="imageName" value="@item" class="form-check-input" id="@item">
+                        </div>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-danger mt-3 @(User.IsInRole("admin")?"":"disabled")"><i class="far fa-trash-alt"></i> Delete Image</button>
+            </form>
+        </div>
+
+        <div class="offset-md-3 col-md-9 mt-5">
+            <h3>Slider Images</h3>
+            <hr>
+
+            <form asp-controller="Settings" asp-action="AddIndexImage" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="fileLocation" value="wwwroot\\img\\slider">
+                <div class="row mb-3">
+                    <div class="col-md-9">
+                        <input type="file" class="form-control" id="formFile" name="file">
+                    </div>
+                    <div class="col-md-3 sm-btn-sm mt-md-0 mt-3">
+                        <button type="submit" class="btn btn-primary @(User.IsInRole("admin")?"":"disabled")"><i class="fas fa-images"></i> Add Image</button>
+                    </div>                    
+                </div>
+            </form>
+
+            <form asp-controller="Settings" asp-action="DeleteIndexImage" method="post">
+                <input type="hidden" name="fileLocation" value="wwwroot/img/slider/">
+                <div class="col-12 d-flex flex-wrap">
+                    @foreach (var item in Model.SliderImageUrl)
+                    {
+                        <div class="form-check border rounded-2 me-1" style="width: 90px;">
+                            <label for="@item" class="w-100" style="margin-left: 0px;">@(item.Length>6?item.Substring(0,5)+"...":item)<img src="/img/slider/@item" class="w-100"></label>
+                            <input type="checkbox" name="imageName" value="@item" class="form-check-input" id="@item">
+                        </div>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-danger mt-3 @(User.IsInRole("admin")?"":"disabled")"><i class="far fa-trash-alt"></i> Delete Image</button>
+            </form>
+        </div>
+
+        <div class="offset-md-3 col-md-9 mt-5">
+            <h3>Svg Images</h3>
+            <hr>
+
+            <form asp-controller="Settings" asp-action="AddIndexImage" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="fileLocation" value="wwwroot\\img\\svg">
+                <div class="row mb-3">
+                    <div class="col-md-9">
+                        <input type="file" class="form-control" id="formFile" name="file">
+                    </div>
+                    <div class="col-md-3 sm-btn-sm mt-md-0 mt-3">
+                        <button type="submit" class="btn btn-primary @(User.IsInRole("admin")?"":"disabled")"><i class="fas fa-images"></i> Add Image</button>
+                    </div>                    
+                </div>
+            </form>
+
+            <form asp-controller="Settings" asp-action="DeleteIndexImage" method="post">
+                <input type="hidden" name="fileLocation" value="wwwroot/img/svg/">
+                <div class="col-12 d-flex flex-wrap">
+                    @foreach (var item in Model.SvgImageUrl)
+                    {
+                        <div class="form-check border rounded-2 me-1" style="width: 90px;">
+                            <label for="@item" class="w-100" style="margin-left: 0px;">@(item.Length>6?item.Substring(0,5)+"...":item)<img src="/img/svg/@item" class="w-100"></label>
+                            <input type="checkbox" name="imageName" value="@item" class="form-check-input" id="@item">
+                        </div>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-danger mt-3 @(User.IsInRole("admin")?"":"disabled")"><i class="far fa-trash-alt"></i> Delete Image</button>
+            </form>
+        </div>
+
+        <div class="offset-md-3 col-md-9 mt-5 mb-4">
+            <h3>Icon Images</h3>
+            <hr>
+
+            <form asp-controller="Settings" asp-action="AddIndexImage" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="fileLocation" value="wwwroot\\img\\icon">
+                <div class="row mb-3">
+                    <div class="col-md-9">
+                        <input type="file" class="form-control" id="formFile" name="file">
+                    </div>
+                    <div class="col-md-3 sm-btn-sm mt-md-0 mt-3">
+                        <button type="submit" class="btn btn-primary @(User.IsInRole("admin")?"":"disabled")"><i class="fas fa-images"></i> Add Image</button>
+                    </div>                    
+                </div>
+            </form>
+
+            <form asp-controller="Settings" asp-action="DeleteIndexImage" method="post">
+                <input type="hidden" name="fileLocation" value="wwwroot/img/icon/">
+                <div class="col-12 d-flex flex-wrap">
+                    @foreach (var item in Model.IconImageUrl)
+                    {
+                        <div class="form-check border rounded-2 me-1" style="width: 90px;">
+                            <label for="@item" class="w-100" style="margin-left: 0px;">@(item.Length>6?item.Substring(0,5)+"...":item)<img src="/img/icon/@item" class="w-100"></label>
+                            <input type="checkbox" name="imageName" value="@item" class="form-check-input" id="@item">
+                        </div>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-danger mt-3 @(User.IsInRole("admin")?"":"disabled")"><i class="far fa-trash-alt"></i> Delete Image</button>
+            </form>
+        </div>
+    </div>
+</div>

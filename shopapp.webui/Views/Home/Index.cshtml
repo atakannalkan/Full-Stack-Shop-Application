@@ -1,0 +1,42 @@
+@model ProductListViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-success alert-dismissible fade show designAlert">
+                <i class="bi bi-info-circle-fill text-success myBootstrapIcon"></i>
+                Design kısmından farklı disaynlar deneyebilirsiniz.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+
+            @if (TempData["message"] != null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                @await Html.PartialAsync("_alert", message)
+            }            
+            
+            @await Html.PartialAsync("_carousel")
+
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 mb-3">
+            @await Component.InvokeAsync("Category")
+
+            @await Html.PartialAsync("_design")
+        </div>        
+
+        <div class="col-12 col-lg-9">
+            
+            <div class="row">
+                @foreach (var item in Model.Products)
+                {
+                    <div class="card-group col-6 col-sm-4 col-md-3">
+                        @await Html.PartialAsync("_products", item)
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

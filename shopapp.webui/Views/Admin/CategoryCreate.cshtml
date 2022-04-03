@@ -1,0 +1,38 @@
+@model CategoryModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-controller="Admin" asp-action="CategoryCreate" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="row mb-1 mb-sm-3 d-flex align-items-center">
+                    <label asp-for="Name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <input type="text" asp-for="Name" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row mb-1 mb-sm-3 d-flex align-items-center">
+                    <label asp-for="Url" class="col-sm-2 col-form-label">Url</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Url" class="text-danger"></span>
+                        <input type="text" asp-for="Url" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-2 mt-4">
+                        <a href="/admin/categories" class="btn btn-secondary me-2"><i class="fas fa-arrow-circle-left"></i> Back to list</a>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create</button>
+                    </div>
+                </div>              
+
+            </form>
+        </div>
+    </div>
+</div>

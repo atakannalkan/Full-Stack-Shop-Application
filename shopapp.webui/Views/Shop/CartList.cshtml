@@ -1,0 +1,146 @@
+@model CartModel
+
+<div class="container">
+    <h2>Sepetteki Ürünler</h2>
+    <hr>    
+
+    @if (Model.CartItem.Count() == 0)
+    {
+        <div class="row">
+            <div class="col-md-7 mt-3">
+                <div class="alert alert-dark alert-dismissible fade show">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-exclamation-circle-fill text-dark mb-1" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                    @* Sepetinizde ürün bulunmamaktadır. *@
+                    <h5 class="d-inline">Sepetinizde ürün bulunmamaktadır</h5>
+                    <p class="mt-2">
+                        <span>Sepetinizde henüz ürün bulunmuyor, biraz alışverişe ne dersiniz ?</span> <br>
+                        <span>Sipariş vermek için dilediğiniz ürünü/ürünleri sepetinize ekleyebilirsiniz.</span>
+                        <hr>                        
+                    </p>
+                    <a href="/category" class="btn btn-primary"><i class="fas fa-arrow-circle-left"></i> Ürünleri Gör</a>
+                    <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            </div>
+
+            <div class="col-md-5">
+                <img src="/img/svg/cartEmpty.svg" class="w-100" alt="Cart Empty">
+            </div>
+        </div>
+        
+        
+    } else {
+        <div class="row">
+        <div class="col-md-8">
+            @if (TempData["message"] != null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                @await Html.PartialAsync("_alert", message);
+            }
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th style="width: 100px;">Resim</th>
+                            <th>İsim</th>
+                            <th>Adet</th>
+                            <th>Fiyat</th>
+                            <th></th>
+                        </tr>                                       
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.CartItem)
+                        {
+                            <tr>
+                                <td><img src="/img/@item.Product.ImageUrl" alt="" class="w-100"></td>
+                                <td>@item.Product.Name</td>
+                                <td>                                    
+                                    <div class="btn-group">
+                                        <form asp-controller="Shop" asp-action="CartEdit" method="post">
+                                            <input type="hidden" name="productId" value="@item.ProductId">
+                                            <input type="hidden" name="quantity" value="@(item.Quantity-1)">
+                                            <button type="submit" class="btn btn-primary btn-sm rounded-0 rounded-start"><i class="bi bi-dash"></i></button>
+                                        </form>
+                                        <input type="text" value="@item.Quantity" class="form-control form-control-sm rounded-0 bg-white" style="width: 35px; text-align: center;" readonly>
+                                        <form asp-controller="Shop" asp-action="CartEdit" method="post">
+                                            <input type="hidden" name="productId" value="@item.ProductId">
+                                            <input type="hidden" name="quantity" value="@(item.Quantity+1)">
+                                            <button type="submit" class="btn btn-primary rounded-0 rounded-end btn-sm"> <i class="bi bi-plus"></i> </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>@(item.Quantity * item.Product.Price)</td>
+                                <td>
+                                    <form asp-controller="Shop" asp-action="DeleteToCart" method="post">
+                                        <input type="hidden" name="productId" value="@item.ProductId">
+                                        <input type="hidden" name="productName" value="@item.Product.Name">
+
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Sil</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-4 border">
+            <h3 class="text-center mt-1 mb-2">Sipariş Özeti</h3>
+
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="border-bottom">
+                        <th style="font-weight: 600;">Toplam Ürün</th>
+                        <td>@Model.ProductCount()</td>
+                    </tr>
+                    <tr class="border-bottom">
+                        <th style="font-weight: 600;">Ürün Fiyatı</th>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                    <tr class="border-bottom">
+                        <th style="font-weight: 600;">Kargo Fiyatı</th>
+                        <td class="@(Model.TotalPrice() > 15000?"text-success":"")">@(Model.TotalPrice() > 15000?"Ücretsiz":Model.ShoppingPrice)</td>
+                    </tr>
+                    <tr>
+                        <th><h5>Toplam Fiyat:</h5></th>
+                        <th><h5>@(Model.TotalPrice() > 5000?Model.TotalPrice().ToString("c"):(Model.TotalPrice()+Model.ShoppingPrice).ToString("c"))</h5></th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <a href="/" class="btn btn-secondary mb-2"><i class="fas fa-arrow-circle-left"></i> Alışverişe Devam Et</a>
+                <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#buyModal"><i class="bi bi-bag-fill"></i> Satın Al</button>
+
+                <div class="modal fade" id="buyModal" data-bs-backdrop="static">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header bg-danger text-white">
+                                <h4 class="modal-title">Uyarı !</h4>
+                                <button type="button" class="btn-close btn-close-white text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            
+                            <div class="modal-body text-center">
+                                    <i class="bi bi-x-octagon-fill text-danger" style="font-size: 35px;"></i>
+                                    
+                                    <p class="modalBodyText"> <strong>Dikkat !</strong> Sitemizde şu an satın alım aktif değildir </p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-times-octagon"></i> Kapat</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    }
+    
+</div>

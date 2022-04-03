@@ -1,0 +1,38 @@
+@model ProductDetailsModel
+
+<div class="container mb-5">
+    <div class="row mt-4 d-flex justify-content-center mb-5">
+        <div class="col-12 col-md-9 col-lg-4 border rounded">
+            <img src="/img/@Model.Product.ImageUrl" class="img-fluid mb-3">
+        </div>
+
+        <div class="col-12 col-md-9 col-lg-8 pt-3">
+            <h2 class="detailsProductName">@Model.Product.Name</h2>
+            <p>@Model.Product.Url</p>
+            <hr>
+
+            <div>
+                <strong class="me-1">Kategoriler: </strong>
+                @foreach (var item in Model.Categories)
+                {
+                    <a href="/category/@item.Url" class="btn btn-link px-0">@item.Name</a> <p class="d-inline">|</p>
+                }
+            </div>
+            <h5 class="mt-3 mb-3">@Model.Product.Price <i class="fas fa-lira-sign"></i></h5>
+
+            @await Html.PartialAsync("_productRating", Model.Product)
+
+            <div class="mt-5">
+                <h5 class="d-inline">Ürün Açıklaması: </h5> <span class="productDescription">@Html.Raw(Model.Product.Description)</span>
+            </div>
+            <form asp-controller="Shop" asp-action="AddToCart" method="post">
+                <div class="input-group mb-3 numberInputGroup mt-5">                
+                    <input type="hidden" name="productId" value="@Model.Product.ProductId">
+
+                    <input type="number" name="quantity" class="form-control d-inline" value="1" min="1" max="@Model.Product.Stock">
+                    <button type="submit" class="btn btn-primary d-inline"><i class="fas fa-cart-plus"></i> Sepete Ekle</button>                
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.csprojAssemblyReference.cache
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.AssemblyInfoInputs.cache
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.AssemblyInfo.cs
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.csproj.CoreCompileInputs.cache
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.business.deps.json
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.business.dll
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\ref\shopapp.business.dll
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.business.pdb
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.data.dll
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.entity.dll
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.entity.pdb
+C:\Users\atoka\Desktop\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.data.pdb
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.csproj.CopyComplete
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.dll
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\ref\shopapp.business.dll
+C:\Users\atoka\Desktop\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.pdb
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.business.deps.json
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.business.dll
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\ref\shopapp.business.dll
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.business.pdb
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.data.dll
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.entity.dll
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.entity.pdb
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\bin\Debug\net5.0\shopapp.data.pdb
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.csprojAssemblyReference.cache
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.AssemblyInfoInputs.cache
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.AssemblyInfo.cs
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.csproj.CoreCompileInputs.cache
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.csproj.CopyComplete
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.dll
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\ref\shopapp.business.dll
+D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.business\obj\Debug\net5.0\shopapp.business.pdb

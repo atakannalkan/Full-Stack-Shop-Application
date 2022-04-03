@@ -1,0 +1,25 @@
+@model Product
+
+<div class="productRating">
+    <strong class="ratingText">@Model.Rating</strong>
+    @if (Model.Rating == 5)
+    {
+        @for (int i = 0; i < (int)Model.Rating; i++) // Kaç yıldız aldıysam o kadar dolu yıldız koydum
+        {
+            <i class="fas fa-stars"></i>
+        }        
+    } else {
+        @for (int i = 0; i < (int)Model.Rating; i++) // Kaç yıldız aldıysam o kadar dolu yıldız koydum
+        {
+            <i class="fas fa-star"></i>
+        }
+        @if (Model.Rating - (int)Model.Rating != 0) // Sayı ondalıklımı kontrolü
+        {
+            <i class="fas fa-star-half-alt"></i>
+        }
+        @for (int i = 0; i < Math.Floor(5-Model.Rating); i++) // Kaç yıldız almadıysam o kadar boş yıldız koydum
+        {
+            <i class="far fa-star"></i>
+        }
+    }    
+</div>

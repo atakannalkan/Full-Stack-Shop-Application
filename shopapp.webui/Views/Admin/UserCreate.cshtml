@@ -1,0 +1,84 @@
+@model UserCreateModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container">
+    <h2>Admin User Create</h2>
+    <hr>
+
+    <form asp-controller="Admin" asp-action="UserCreate" method="post" style="margin-top: 35px;">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row d-flex align-items-end mb-1 mb-sm-3">
+                    <label asp-for="FirstName" class="col-form-label col-sm-2">First Name</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                        <input type="text" asp-for="FirstName" class="form-control">
+                    </div>
+                </div>
+                <div class="row d-flex align-items-end mb-1 mb-sm-3">
+                    <label asp-for="LastName" class="col-form-label col-sm-2">Last Name</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                        <input type="text" asp-for="LastName" class="form-control">
+                    </div>
+                </div>
+                <div class="row d-flex align-items-end mb-1 mb-sm-3">
+                    <label asp-for="UserName" class="col-form-label col-sm-2">User Name</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                        <input type="text" asp-for="UserName" class="form-control">
+                    </div>
+                </div>
+                <div class="row d-flex align-items-end mb-1 mb-sm-3">
+                    <label asp-for="Email" class="col-form-label col-sm-2">Email</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <input type="text" asp-for="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="row d-flex align-items-end mb-1 mb-sm-3">
+                    <label asp-for="Password" class="col-form-label col-sm-2">Password</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <input type="password" asp-for="Password" class="form-control">
+                    </div>
+                </div>
+                <div class="row d-flex align-items-end mb-1 mb-sm-3">
+                    <label asp-for="RePassword" class="col-form-label col-sm-2">Re Password</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="RePassword" class="text-danger"></span>
+                        <input type="password" asp-for="RePassword" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-2 mt-4 mb-2 mb-md-0">
+                        <a href="/admin/user/list" class="btn btn-secondary me-1"><i class="fas fa-arrow-circle-left"></i> Back to list</a>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Create User</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-md-4 border">
+                <h4 class="text-center my-3">Options</h4>
+                @foreach (var item in ViewBag.AllRoles)
+                {
+                    <div class="form-check">
+                        <label for="@item.Id" class="form-check-label">@item.Name</label>
+                        <input type="checkbox" name="selectedRoles" value="@item.Name" id="@item.Id" class="form-check-input">
+                    </div>
+                }
+                <hr>
+
+                <div class="form-check mb-2 mb-md-0">
+                    <label asp-for="EmailConfirmed" class="form-check-label">Email Confirmed</label>
+                    <input type="checkbox" asp-for="EmailConfirmed" class="form-check-input">
+                </div>
+            </div>
+        </div>        
+    </form>
+</div>

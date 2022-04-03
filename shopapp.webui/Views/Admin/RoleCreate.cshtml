@@ -1,0 +1,35 @@
+@model RoleModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container">
+    <h2>Role Create</h2>
+    <hr>
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <form asp-controller="Admin" asp-action="RoleCreate" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="row d-flex align-items-end">
+                    <label asp-for="Name" class="col-form-label col-sm-2">Name</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <input type="text" asp-for="Name" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-2 mt-5">
+                        <a href="/admin/role/list" class="btn btn-secondary"><i class="fas fa-arrow-circle-left"></i> Back to list</a>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+    
+</div>

@@ -1,0 +1,131 @@
+@model ProductModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container mt-3 pb-5">
+    <div class="h2">Admin Product Create</div>
+    <hr>
+
+    <form asp-controller="Admin" asp-action="ProductCreate" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="row mt-3">
+            <div class="col-md-8">
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label asp-for="Name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm 10">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <input type="text" asp-for="Name" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label asp-for="Url" class="col-sm-2 col-form-label">Url</label>
+                    <div class="col-sm 10">
+                        <span asp-validation-for="Url" class="text-danger"></span>
+                        <input type="text" asp-for="Url" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label asp-for="Price" class="col-sm-2 col-form-label">Price</label>
+                    <div class="col-sm 10">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                        <input type="text" asp-for="Price" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label asp-for="Rating" class="col-sm-2">Rating</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                        <input type="number" asp-for="Rating" class="form-control" min="0" max="5" step="0.5">
+                    </div>                    
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label asp-for="Stock" class="col-sm-2">Stock</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Stock" class="text-danger"></span>
+                        <input type="number" asp-for="Stock" class="form-control" min="0" max="100">
+                    </div>
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-center">
+                    <label asp-for="Description" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm 10">                        
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                        <textarea asp-for="Description" class="form-control mb-1" id="editor"></textarea>
+                        <span class="errorText"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 mb-sm-4 d-flex align-items-end">
+                    <label asp-for="ImageUrl" class="col-sm-2 col-form-label">Add Image</label>
+                    <div class="col-sm 10">
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        <input type="file" class="form-control" name="file">
+                    </div>
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label for="ImageUrl" class="col-sm-2 col-form-label">Edit Image Url</label>
+                    <div class="col-sm 10">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-12 d-flex flex-wrap">
+                                @foreach (var item in ViewBag.AllImageUrl)
+                                {
+                                    <div class="form-check border rounded-2 me-1" style="width: 90px;">
+                                        <label for="@item" class="" style="margin-left: 0px;">@(item.Length>5?item.Substring(0,5)+"...":item)<img src="/img/@item" class="w-100"></label>
+                                        <input type="radio" name="selectedImageUrl" value="@item" class="form-check-input" id="@item">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-sm-10 offset-sm-2 mt-4">
+                        <a href="/admin/products" class="btn btn-secondary me-1"><i class="fas fa-arrow-circle-left"></i> Back to list</a>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="col-md-4 border">
+                <h4 class="text-center my-2">Options</h4>
+                @foreach (var item in ViewBag.AllCategory)
+                {
+                    <div class="form-check">
+                        <label for="@item.CategoryId" class="form-check-label">@item.Name</label>
+                        <input type="checkbox" class="form-check-input" name="categoryIds" value="@item.CategoryId" id="@item.CategoryId"
+                        @if (ViewBag.ReturnCategoryIds != null)
+                        {
+                            foreach (var categoryId in ViewBag.ReturnCategoryIds)
+                            {
+                                @(categoryId==item.CategoryId?"checked":"")
+                            }
+                        }
+                        >
+                    </div>
+                }
+                <hr>
+                <div class="form-check">
+                    <label asp-for="IsHome" class="form-check-label">Is Home</label>
+                    <input type="checkbox" asp-for="IsHome" class="form-check-input">
+                </div>
+                <div class="form-check mb-2 mb-md-0">
+                    <label asp-for="IsApproved" class="form-check-label">Is Approved</label>
+                    <input type="checkbox" asp-for="IsApproved" class="form-check-input">
+                </div>                
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts
+{
+    <script src="/modules/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editor",
+        {
+            height: 200
+        });
+    </script>
+}

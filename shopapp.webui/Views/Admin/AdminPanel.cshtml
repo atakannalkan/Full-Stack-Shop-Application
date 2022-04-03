@@ -1,0 +1,105 @@
+@model AdminPanelModel
+@{
+    Layout="_AdminLayout";
+}
+
+@* Normalde burada dinamik bir sayfa yapacaktım, ancak bunun için veritabanına sütun ekleme, sütuna veri girme
+ve veritabanından veri çekme gibi birçok işlem olduğu için gerek görmeye static bir sayfa yaptım *@
+
+<div class="bg-secondary text-white p-2">
+    <div class="container">
+        <h5 class="mb-0">
+            <i class="fa fa-caret-right"></i>
+            Dashboard
+        </h5>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2>Admin Panel</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card position-relative mt-5">
+                <div class="position-absolute top-0 start-50 translate-middle border rounded-circle" style="width: 55px;">
+                    <img src="/img/icon/product.png" class="w-100" alt="">
+                </div>
+
+                <div class="card-body mt-4 text-center">                    
+                    <h5 class="card-title">Products</h5>
+                    <h5>@Model.Products.Count()</h5>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/admin/products" class="btn btn-primary btn-sm">More Details <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card position-relative mt-5">
+                <div class="position-absolute top-0 start-50 translate-middle border rounded-circle" style="width: 55px;">
+                    <img src="/img/icon/categories2.png" class="w-100" alt="">
+                </div>
+
+                <div class="card-body mt-4 text-center">
+                    <h5 class="card-title">Categories</h5>
+                    <h5>@Model.Categories.Count()</h5>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/admin/categories" class="btn btn-primary btn-sm">More Details <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card position-relative mt-5">
+                <div class="position-absolute top-0 start-50 translate-middle border rounded-circle" style="width: 55px;">
+                    <img src="/img/icon/users.png" class="w-100" alt="">
+                </div>
+
+                <div class="card-body mt-4 text-center">                    
+                    <h5 class="card-title">Users</h5>
+                    <h5>@Model.Users.Count()</h5>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/admin/user/list" class="btn btn-primary btn-sm">More Details <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card position-relative mt-5">
+                <div class="position-absolute top-0 start-50 translate-middle border rounded-circle" style="width: 55px;">
+                    <img src="/img/icon/roles.png" class="w-100" alt="">
+                </div>
+
+                <div class="card-body mt-4 text-center">                    
+                    <h5 class="card-title">Roles</h5>
+                    <h5>@Model.Roles.Count()</h5>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/admin/role/list" class="btn btn-primary btn-sm">More Details <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 card-group settingsCard mb-4 mb-md-0">
+            <div class="card position-relative mt-5">
+                <div class="position-absolute top-0 start-50 translate-middle border rounded-circle" style="width: 55px;">
+                    <img src="/img/icon/settings.png" class="w-100" alt="">
+                </div>
+
+                <div class="card-body mt-4 text-center d-flex justify-content-center align-items-center">                    
+                    <h5 class="card-title">Settings</h5>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/admin/settings" class="btn btn-primary btn-sm">More Details <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+
+@section Scripts {
+    <script>
+        $(".myLayoutNavbar").css("margin-bottom","0");
+    </script>
+}

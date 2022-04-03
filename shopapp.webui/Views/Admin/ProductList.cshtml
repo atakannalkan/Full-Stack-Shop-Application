@@ -1,0 +1,110 @@
+@model ProductListViewModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container mt-2">
+    <h2>Admin Products</h2>
+    <hr>
+    <div class="mb-3 d-flex align-items-end">
+        <a href="/admin/panel" class="btn btn-secondary btn-sm "><i class="fas fa-arrow-circle-left"></i> Back to panel</a>
+        <i class="fal fa-grip-lines-vertical mx-1" style="font-size: 28px;"></i>
+        <a href="/admin/product/create" class="btn btn-primary btn-sm @(User.IsInRole("admin")?"":"disabled")"><i class="fas fa-plus-circle"></i> Add Product</a>
+    </div>    
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-lg-8 order-2">
+            @if (TempData["message"] != null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                @await Html.PartialAsync("_alert", message);
+            }
+        </div>
+        <div class="card col-12 col-sm-6 col-lg-3 mb-3 order-1 p-0 cardInformation">
+            <div class="card-header">Product Information</div>
+            <div class="card-body">
+                <h6>Total Product: @Model.Products.Count()</h6>
+                <h6>Home: @(Model.Products.Where(i => i.IsHome).Count())</h6>
+                <h6>Approved: @(Model.Products.Where(i => i.IsApproved).Count())</h6>
+                <h6>Home and Approved: @(Model.Products.Where(i => i.IsHome && i.IsApproved).Count())</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive-sm mb-5">
+        <table class="table table-bordered table-hover">
+            <thead class="table-secondary">
+                <tr>
+                    <th style="width: 50px;">Id</th>
+                    <th style="width: 120px;">ImageUrl</th>
+                    <th>Name</th>
+                    <th style="width: 150px;">Price</th>
+                    <th style="width: 100px;">Rating</th>                
+                    <th style="width: 120px;">IsApproved</th>
+                    <th style="width: 120px;">IsHome</th>
+                    <th style="width: 130px;">Events</th>
+                </tr>
+            </thead>
+
+            <tbody>            
+                @foreach (var item in Model.Products)
+                {
+                    <tr>
+                        <td>@item.ProductId</td>
+                        <td><img src="/img/@item.ImageUrl" class="w-100"></td>
+                        <td>@item.Name</td>
+                        <td>@item.Price <i class="fas fa-lira-sign"></i></td>
+                        <td><strong>@item.Rating</strong></td>                    
+                        <td>
+                            @if (item.IsApproved)
+                            {
+                                @* FontAwesome: <i class="fad fa-check-circle text-success" style="font-size: 25px;"></i> *@
+                                <i class="bi bi-check-circle-fill text-success myBootstrapIcon"></i>
+                            } else {
+                                <i class="bi bi-x-circle-fill text-danger myBootstrapIcon"></i>
+                                @* FontAwesome: <i class="fad fa-times-circle text-danger" style="font-size: 25px;"></i> *@
+                            }
+                        </td>
+                        <td>
+                            @if (item.IsHome)
+                            {
+                                <i class="bi bi-check-circle-fill text-success myBootstrapIcon"></i>
+                            } else {
+                                <i class="bi bi-x-circle-fill text-danger myBootstrapIcon"></i>
+                            }
+                        </td>
+                        <td>
+                            <a href="/admin/product/edit/@item.ProductId" class="btn btn-primary btn-sm @(User.IsInRole("admin")?"":"disabled")">Edit</a>
+                            <button data-target="/admin/ProductDelete/@item.ProductId" class="btn btn-danger btn-sm d-inline productDeleteModalBtn @(User.IsInRole("admin")?"":"disabled")" data-bs-toggle="modal" data-bs-target="#productDeleteModal">Delete</button>
+
+                            <div class="modal fade" id="productDeleteModal" data-bs-backdrop="static">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header bg-danger text-white">
+                                            <h4 class="modal-title">Delete the product ?</h4>
+                                            <button type="button" class="btn-close btn-close-white text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        
+                                        <div class="modal-body text-center">
+                                                <i class="bi bi-x-octagon-fill text-danger" style="font-size: 35px;"></i>
+                                                
+                                                <p class="modalBodyText"> <strong>Dikkat !</strong> Bu ürünü kalıcı olarak silmek istediğinize emin misiniz ?</p>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i> Cancel</button>
+                                            <a href="" class="btn btn-danger productDeleteButon"><i class="far fa-trash-alt"></i> Delete</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                }            
+            </tbody>
+        </table>
+    </div>
+</div>

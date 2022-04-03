@@ -1,0 +1,101 @@
+@model RoleDetailsModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container">
+    <h2>Admin Role Edit</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-lg-8 order-2">
+            @if (TempData["message"] != null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                @await Html.PartialAsync("_alert", message);
+            }
+        </div>
+        <div class="card col-12 col-sm-6 col-lg-3 mb-3 order-1 p-0 cardInformation">
+            <div class="card-header">Role Information</div>
+            <div class="card-body">
+                <h6>Total User: @(Model.Members.Count()+Model.NonMembers.Count())</h6>
+                <h6>Members: @(Model.Members.Count())</h6>
+                <h6>Non Members: @(Model.NonMembers.Count())</h6>
+            </div>
+        </div>
+    </div>
+
+    <form asp-controller="Admin" asp-action="RoleEdit" method="post">
+        <input type="hidden" name="RoleName" value="@Model.Role.Name">
+        <input type="hidden" name="RoleId" value="@Model.Role.Id">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5 class="text-success mb-3">Add To @Model.Role.Name</h5>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Add</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model.NonMembers.Count() == 0)
+                        {
+                            <tr>
+                                <td>All users belong to the role</td>
+                            </tr>
+                        } else {
+                            @foreach (var user in Model.NonMembers)
+                            {
+                                <tr>
+                                    <td>@user.UserName</td>
+                                    <td>
+                                        <input type="checkbox" name="AddToRole" value="@user.Id" class="form-check-input" style="cursor: pointer;">
+                                    </td>
+                                </tr>
+                            } 
+                        }                                   
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h5 class="text-danger mb-3">Delete To @Model.Role.Name</h5>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model.Members.Count() == 0)
+                        {
+                            <tr>
+                                <td>No user for the role</td>
+                            </tr>
+                        } else {
+                            @foreach (var user in Model.Members)
+                            {
+                                <tr>
+                                    <td>@user.UserName</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="DeleteToRole" value="@user.Id" style="cursor: pointer;">
+                                    </td>
+                                </tr>
+                            }
+                        }                                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-4 mb-5">
+            <a href="/admin/role/list" class="btn btn-secondary me-1"><i class="fas fa-arrow-circle-left"></i> Back to list</a>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-save2" style="font-weight: 900;"></i> Save Roles</button>
+        </div>
+    </form>
+</div>

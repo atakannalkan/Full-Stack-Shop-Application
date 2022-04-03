@@ -1,0 +1,52 @@
+@model Arrangement
+@{
+    Layout="_AdminLayout";
+    var myReadOnly = User.IsInRole("admin")?"":"readonly";
+}
+
+<div class="container">
+    <div class="h2">Arrangement</div>
+    <hr>   
+
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <ul class="list-group">
+                <a href="/admin/settings" class="list-group-item">Slider</a>
+                <a href="/admin/settings/arrangement" class="list-group-item active">Number</a>
+                <a href="/admin/settings/files" class="list-group-item">Files</a>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            @if (TempData["message"] != null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                @await Html.PartialAsync("_alert", message);
+            }
+            <form asp-controller="Settings" asp-action="Arrangement">
+                <input type="hidden" asp-for="Id">
+                <div asp-validation-summary="All" class="text-danger"></div>            
+                <h5 class="d-block mb-5">Show per page content</h5>
+
+                <div class="row d-flex align-items-center">
+                    <label asp-for="Content" class="col-sm-2 col-form-label">Number of content</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <input type="number" asp-for="Content" class="form-control" min="1" max="30">
+                        } else {
+                            <input type="number" asp-for="Content" class="form-control" min="1" max="30" readonly>
+                        }                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-2 mt-5 mb-5">
+                        <button type="submit" class="btn btn-primary @(User.IsInRole("admin")?"":"disabled")"><i class="bi bi-save2" style="font-weight: 900;"></i> Save Arrangement</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>

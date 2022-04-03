@@ -1,0 +1,34 @@
+@model List<Product>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-secondary">
+                <tr>
+                    <th style="width: 40px;">Id</th>
+                    <th style="width: 100px;">Resim</th>
+                    <th>İsim</th>
+                    <th>Url</th>
+                    <th>Fiyat</th>
+                    <th>Rating</th>
+                    <th>Stok</th>
+                </tr>
+            </thead>
+
+            <tbody>            
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductId</td>
+                        <td> <img src="/img/@item.ImageUrl" class="w-100"> </td>
+                        <td>@item.Name</td>
+                        <td>@item.Url</td>
+                        <td>@item.Price</td>
+                        <td>@item.Rating</td>
+                        <td>@item.Stock</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

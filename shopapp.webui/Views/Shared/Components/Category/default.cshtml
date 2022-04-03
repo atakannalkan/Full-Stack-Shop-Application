@@ -1,0 +1,12 @@
+@model List<Category>
+
+<ul class="list-group">
+    <a href="/category" class="list-group-item @(ViewBag.CategoryAction == "CategoryList" && ViewBag.CategoryUrl == null?"bg-secondary text-white":"")">Tüm Kategoriler</a>
+    @foreach (var category in Model)
+    {
+        <a href="/category/@category.Url" class="list-group-item d-flex justify-content-between @(category.Url == ViewBag.CategoryUrl?"active":"")">
+            <span>@category.Name</span>
+            <span class="badge bg-primary categoryBadge">@TempData["CategoryCount"+category.CategoryId]</span>            
+        </a>        
+    }
+</ul>

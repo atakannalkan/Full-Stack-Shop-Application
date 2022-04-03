@@ -1,0 +1,68 @@
+@model LoginModel
+
+<div class="container">
+    
+    <h2>Giriş Yap</h2>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-8">
+            @if (TempData["message"] != null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                @await Html.PartialAsync("_alert", message);
+            }
+        </div>
+    </div>    
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 col-md-8 col-lg-5 order-1 order-lg-2">
+            <img src="/img/svg/login.svg" class="w-100" alt="">
+        </div>
+
+        <div class="col-lg-7 order-2 order-lg-1 mt-3">
+            <form asp-controller="Account" asp-action="Login" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                
+                <div class="row d-flex align-items-end mb-3 mb-sm-4">
+                    <label asp-for="UsernameOrEmail" class="col-form-label col-sm-2 usernameOrEmail">Kullanıcı Adı veya Email</label>
+                    <div class="col-sm-10 usernameOrEmailInput">
+                        <span asp-validation-for="UsernameOrEmail" class="text-danger"></span>
+                        <input type="text" asp-for="UsernameOrEmail" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row d-flex align-items-end mb-3">
+                    <label asp-for="Password" class="col-form-label col-sm-2">Şifre</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <input type="password" asp-for="Password" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-sm-4 offset-sm-2">
+                        <div class="form-check me-0">                           
+                            <label asp-for="RememberMe" class="form-check-label">Beni Hatırla</label>
+                            <input type="checkbox" class="form-check-input" asp-for="RememberMe">
+                        </div>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-end">
+                        <a href="/account/forgotpassword" class="btn btn-link ms-2 px-1 d-inline forgotPasswordButton"><i class="fas fa-unlock-alt"></i> Şifremi Unuttum</a>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-2 mt-5">
+                        <button type="submit" class="btn btn-primary me-2"><i class="fas fa-sign-in-alt"></i> Giriş Yap</button>
+                        <div class="loginFooter">
+                            <i class="fas fa-grip-lines-vertical"></i>
+                            <span class="ms-2">Üye değil misiniz ? <a href="/account/register" class="btn btn-link px-1"><i class="far fa-user-plus"></i> Kayıt Ol</a></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

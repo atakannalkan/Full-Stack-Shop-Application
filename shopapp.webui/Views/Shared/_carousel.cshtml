@@ -1,0 +1,38 @@
+@model ProductListViewModel
+
+<div class="carousel slide border" id="mySlider" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mySlider" data-bs-slide-to="0" class="active"></button>
+        @for (int i = 0; i < Model.Sliders.Count() - 1; i++)
+        {
+            <button type="button" data-bs-target="#mySlider" data-bs-slide-to="@(i+1)"></button>
+        }
+    </div>
+
+    <div class="carousel-inner">
+        @foreach (var item in Model.Sliders)
+        {
+            <div class="carousel-item @(item.Active?"active":"")" data-bs-interval="4000">
+                <img src="/img/slider/@item.ImageUrl" class="d-block w-100 Image_@item.Order img-fluid">
+                @* <img src="" class="d-block w-100 Image_@item.Order" style="width: 1336; height: 380px; background-image: url(/img/slider/@item.ImageUrl); background-size: cover; background-position: center;"> *@
+
+                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        ResponsiveImages("Image_@item.Order","@item.ImageUrl");
+                        $(window).resize(function() {
+                            ResponsiveImages("Image_@item.Order","@item.ImageUrl");
+                        });
+                    });
+                </script>
+            </div>
+        }        
+    </div>
+
+    <button type="button" class="carousel-control-prev" data-bs-target="#mySlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon carouselControlButtons"></span>
+    </button>
+    <button type="button" class="carousel-control-next" data-bs-target="#mySlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon carouselControlButtons"></span>
+    </button>
+</div>   

@@ -1,0 +1,130 @@
+@model CategoryModel
+@{
+    Layout="_AdminLayout";
+}
+
+<div class="container">
+    <h2>Admin Edit Category</h2>
+    <hr>
+    @if (TempData["message"] != null)
+    {
+        var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+        @await Html.PartialAsync("_alert", message);
+    }
+
+    <div class="row">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-md-4">
+            <form asp-controller="Admin" asp-action="CategoryEdit" method="post">
+                <input type="hidden" asp-for="CategoryId">
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">                
+                    <label asp-for="Name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <input type="text" asp-for="Name" class="form-control col-sm-10">
+                    </div>
+                </div>
+                <div class="row mb-1 mb-sm-3 d-flex align-items-end">
+                    <label asp-for="Url" class="col-sm-2 col-form-label mb-0">Url</label>
+                    <div class="col-sm-10">
+                        <span asp-validation-for="Url" class="text-danger"></span>
+                        <input type="text" asp-for="Url" class="form-control col-sm-10">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-2 mt-4 mb-2 mb-sm-3">
+                        <a href="/admin/categories" class="btn btn-secondary"><i class="fas fa-arrow-circle-left"></i> Back to list</a>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-save2" style="font-weight: 900;"></i> Update</button>
+                    </div>
+                </div>
+            </form>            
+        </div>
+        <div class="col-md-8">
+            @for (int i = 0; i < Model.Products.Count; i++)
+            {
+                <input type="hidden" name="Products[@i].ProductId" value="@Model.Products[@i].ProductId">
+                <input type="hidden" name="Products[@i].Name" value="@Model.Products[@i].Name">
+                <input type="hidden" name="Products[@i].ImageUrl" value="@Model.Products[@i].ImageUrl">
+                <input type="hidden" name="Products[@i].IsHome" value="@Model.Products[@i].IsHome.ToString()">
+                <input type="hidden" name="Products[@i].IsApproved" value="@Model.Products[@i].IsApproved.ToString()">
+            }
+
+            @if (Model.Products.Count() == 0)
+            {
+                <div class="alert alert-danger mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-exclamation-circle-fill text-danger" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                    <span>There are no products in this category !</span>
+                </div>
+            } else {
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">Id</th>
+                                <th style="width: 90px;">Image</th>
+                                <th>Name</th>
+                                <th style="width: 100px;">Is Home</th>
+                                <th style="width: 100px;">Is Approved</th>
+                                <th style="width: 120px;">Events</th>
+                            </tr>                    
+                        </thead>
+
+                        <tbody>                            
+
+                            @foreach (var item in Model.Products)
+                            {
+                                <tr>
+                                    <td>@item.ProductId</td>
+                                    <td><img src="/img/@item.ImageUrl" class="w-100"></td>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        @if (item.IsApproved)
+                                        {
+                                            <i class="bi bi-check-circle-fill text-success myBootstrapIcon"></i>
+                                        } else {
+                                            <i class="bi bi-x-circle-fill text-danger myBootstrapIcon"></i>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.IsHome)
+                                        {
+                                            <i class="bi bi-check-circle-fill text-success myBootstrapIcon"></i>
+                                        } else {
+                                            <i class="bi bi-x-circle-fill text-danger myBootstrapIcon"></i>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a href="/admin/product/edit/@item.ProductId" type="button" class="btn btn-primary btn-sm">Edit</a>
+
+                                        <form action="/Admin/DeleteFromCategory" method="post" class="d-inline">
+                                            <input type="hidden" name="productId" value="@item.ProductId">
+                                            <input type="hidden" name="categoryId" value="@Model.CategoryId">
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="/modules/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editor",
+        {
+            height: 200
+        });
+    </script>
+}
+

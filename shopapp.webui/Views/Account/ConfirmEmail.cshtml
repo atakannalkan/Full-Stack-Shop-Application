@@ -1,0 +1,45 @@
+
+<div class="container">
+    <h2>Email Onayı</h2>
+    <hr>
+
+    @if (TempData["message"] != null)
+    {
+        var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+
+        if (message.AlertType == "danger")
+        {
+            <div class="alert alert-@message.AlertType alert-dismissible fade show">      
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-check-circle-fill text-danger me-2" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <h4 class="d-inline">@message.Name </h4>
+                <hr>
+                <p>@message.Message</p>
+                <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <div class="mt-5">
+                <a href="/" class="btn btn-secondary me-1"><i class="fas fa-arrow-circle-left"></i> Anasayfaya dön</a>
+            </div> 
+            
+        } else if (message.AlertType == "success")
+        {
+            <div class="alert alert-@message.AlertType alert-dismissible fade show">      
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-check-circle-fill text-success me-2" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <h4 class="d-inline">@message.Name</h4>
+                <hr>
+                <p>@message.Message</p>
+                <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <div class="mt-5">
+                <a href="/" class="btn btn-secondary me-1"><i class="fas fa-arrow-circle-left"></i> Anasayfaya dön</a>
+                <a href="/user/myaccount" class="btn btn-primary"><i class="fas fa-user-alt"></i> Hesabım'a Git</a>
+            </div>            
+        }
+    }    
+    
+</div>

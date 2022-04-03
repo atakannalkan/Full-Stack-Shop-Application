@@ -1,0 +1,47 @@
+@model ProductListViewModel
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-lg-3 mb-3">
+            @await Component.InvokeAsync("Category")
+        </div>
+
+        <div class="col-12 col-lg-9">
+
+            @if (Model.Products.Count() == 0)
+            {                
+                <div class="alert alert-danger mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-exclamation-circle-fill text-danger" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                    <span>Bu kategoride ürün bulunmamaktadır !</span>
+                </div>
+            } else {
+                <div class="row">
+                @foreach (var item in Model.Products)
+                {
+                    <div class="card-group col-6 col-sm-4 col-md-3">
+                        @await Html.PartialAsync("_products", item)
+                    </div>
+                }
+            </div>
+
+            <nav class="mt-4">
+                <ul class="pagination">
+                    @for (int i = 0; i < Model.PageInfo.TotalPages(); i++)
+                    {
+                        @if (String.IsNullOrEmpty(Model.PageInfo.CurrentCategory))
+                        {
+                            <li class="page-item @(Model.PageInfo.CurrentPage == i+1?"active":"") "><a href="/category?page=@(i+1)" class="page-link">@(i+1)</a></li>
+                        } else {
+                            <li class="page-item @(Model.PageInfo.CurrentPage == i+1?"active":"") "><a href="/category/@Model.PageInfo.CurrentCategory?page=@(i+1)" class="page-link">@(i+1)</a></li>
+                        }
+                        
+                    }
+                    
+                </ul>
+            </nav>
+            }
+        </div>
+    </div>
+</div>
