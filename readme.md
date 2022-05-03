@@ -46,4 +46,4 @@ Ben bu bağlantıyı **MsSql** veritabanı ile yaptım, eğer sizin bilgisayarı
 
 Mail gönderme bağlantısı **shopapp.webui > appsettings.json > EmailSender** sekmesi altında yer alıyor. Ben bu bağlantıyı varsayılan olarak Microsofta ait ücretsiz mail gönderme servisi ile ilişkilendirdim. Sizde bağlantı ayarlarını düzenleyip değiştirebilirsiniz, hatta uygulamayı yayınladığınızda hosting üzerinde bulunan Mail bilgilerini girerek **Web Mail** üzerinden kullanıcılara mail gönderebilirsiniz. Tabii bu servisi kullanabilmek için **Host, Port** ve **EnableSsl** dışında Mail gönderilecek Email adresi ile Mail'in şifresini yamanız gerekir, bu bilgiler yazılmadıkça uygulamadaki Mail gönderme servisleri çalışmayacaktır.
 
-![Resim](https://r.resimlink.com/fOp1I.png)
+![Resim](https://r.resimlink.com/fOp1I.png2)
