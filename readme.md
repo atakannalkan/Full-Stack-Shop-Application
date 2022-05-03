@@ -8,7 +8,7 @@ Bu projeyi geliştirirken benim en çok zamanımı alan kısım **Admin Paneli**
 
 ## Front-End
 
-Uygulamanın Front-End kısmı **HTML, CSS, JavaScript, jQuery** ve**>Bootstrap 5** yazılım dilleri ile geliştirildi.
+Uygulamanın Front-End kısmı **HTML, CSS, JavaScript, jQuery** ve **Bootstrap 5** yazılım dilleri ile geliştirildi.
 
 ## Back-End
 
