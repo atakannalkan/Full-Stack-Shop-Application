@@ -50,7 +50,10 @@ namespace shopapp.webapi.Controllers
         public IActionResult CreateProduct(Product entity)
         {
             _productService.Create(entity);
-            return CreatedAtAction(nameof(GetProduct), new {id = entity.ProductId}, entity);
+            return CreatedAtAction(nameof(GetProduct), new {id = entity.ProductId}, entity); // Kullanıcıya oluşan entity bilgisini, otomatik olarak 201 (Eklendi) kodu ile gönderiyoruz.
+            // 1- "nameof(GetCategory)" => Burada metodu çağırıyoruz, eklenen veriyi almak için.
+            // 2- "new {id = entity.CategoryId}" => Action metoduna gönderdiğimiz "ID" bilgisi.
+            // 3- "entity" => veritabanına eklenen veriyi gönderiyoruz.
         }
 
         [HttpDelete("{id}")]
@@ -66,9 +69,14 @@ namespace shopapp.webapi.Controllers
             return NoContent();
         }
 
-        [HttpPut]
-        public IActionResult UpdateProduct(Product entity)
+        [HttpPut("{id}")]
+        public IActionResult UpdateProduct(int id, Product entity)
         {
+            if (id != entity.ProductId)
+            {
+                return BadRequest(); // 400 Error !
+            }
+
             var product = _productService.GetById(entity.ProductId);
             if (product == null)
             {
@@ -86,7 +94,7 @@ namespace shopapp.webapi.Controllers
             product.IsApproved = entity.IsApproved;
 
             _productService.Update(product);
-            return CreatedAtAction(nameof(GetProduct), new {id = product.ProductId}, entity);
+            return NoContent();
         }
 
         // Burada ise ilk önce DTO (Data Transfer Object) Klasöründeki ProductDTO'yu oluşturup sadece istediğim bilgileri içine aktararak kullanıcıya gösterdim.

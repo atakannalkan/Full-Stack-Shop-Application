@@ -34,3 +34,21 @@ D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uy
 D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.data\obj\Debug\net5.0\ref\shopapp.data.dll
 D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.pdb
 D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.genruntimeconfig.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.data.deps.json
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.data.runtimeconfig.json
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.data.runtimeconfig.dev.json
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.data.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\ref\shopapp.data.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.data.pdb
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.entity.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\bin\Debug\net5.0\shopapp.entity.pdb
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.csprojAssemblyReference.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.AssemblyInfoInputs.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.AssemblyInfo.cs
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.csproj.CoreCompileInputs.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.csproj.CopyComplete
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\ref\shopapp.data.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.pdb
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.data\obj\Debug\net5.0\shopapp.data.genruntimeconfig.cache

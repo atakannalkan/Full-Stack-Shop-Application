@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w5K8ImHAH9ynb5BUXxIzPL+QdGY0RdsC5HXyPSKJ6+dP6Trbcc8mvi/uR1Vx1gx+N1o4lgEOwYdNvKPP67MZMA==",
+  "dgSpecHash": "UsFy5U0l/Lzg2cHC7FDQ9CnIIVprlfLtqhAW0JW8lrRMedCrGdIZSSIbFh7rv196Z8C4AnkQC/CftQnlyvIIBg==",
   "success": true,
-  "projectFilePath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj",
+  "projectFilePath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\atoka\\.nuget\\packages\\fluentvalidation\\10.3.4\\fluentvalidation.10.3.4.nupkg.sha512",
     "C:\\Users\\atoka\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.4\\fluentvalidation.aspnetcore.10.3.4.nupkg.sha512",

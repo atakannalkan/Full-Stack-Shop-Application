@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BIJ8eEwUxxU1lPmBBacre1kwmBlqIZ+Ds+I5bfVCL4O3d5yYls2PbQ3Usa8Put2P2jUbtGBUxJ7NRf9r60Qksg==",
+  "dgSpecHash": "jO3vhplTYcPajkGBN1jLdVFrA4rTrfpdc5yZYYOTLr1Bb7gp6ks/3sxOVmr2ygMZNqotLkukWfbT49nAqSeo0g==",
   "success": true,
-  "projectFilePath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj",
+  "projectFilePath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\atoka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\atoka\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

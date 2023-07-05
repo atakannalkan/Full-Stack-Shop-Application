@@ -22,3 +22,15 @@ D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uy
 D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.dll
 D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.entity\obj\Debug\net5.0\ref\shopapp.entity.dll
 D:\Users\admin\Desktop\Yazılım\9- Web Geliştirme Eğitimi\Back-End\Asp.Net\Uygulamalar\2- Shop Application\Proje Yedekleri\8- Finish\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.pdb
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\bin\Debug\net5.0\shopapp.entity.deps.json
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\bin\Debug\net5.0\shopapp.entity.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\bin\Debug\net5.0\ref\shopapp.entity.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\bin\Debug\net5.0\shopapp.entity.pdb
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.csprojAssemblyReference.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.AssemblyInfoInputs.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.AssemblyInfo.cs
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.csproj.CoreCompileInputs.cache
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\ref\shopapp.entity.dll
+D:\Users\admin\Desktop\Yazılım\1- Github & Sertifikalar\Github\Projeler\1- Shop Application\shopapp\shopapp.entity\obj\Debug\net5.0\shopapp.entity.pdb

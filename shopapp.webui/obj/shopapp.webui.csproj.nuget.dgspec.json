@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj": {}
+    "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj": {}
   },
   "projects": {
-    "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj": {
+    "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj",
+        "projectUniqueName": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj",
         "projectName": "shopapp.business",
-        "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj",
+        "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj",
         "packagesPath": "C:\\Users\\atoka\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\obj\\",
+        "outputPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\atoka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj": {
-                "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj"
+              "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj": {
+                "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj"
               },
-              "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
-                "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj"
+              "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
+                "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj": {
+    "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj",
+        "projectUniqueName": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj",
         "projectName": "shopapp.data",
-        "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj",
+        "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj",
         "packagesPath": "C:\\Users\\atoka\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\obj\\",
+        "outputPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\atoka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
-                "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj"
+              "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
+                "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj"
               }
             }
           }
@@ -139,14 +139,14 @@
         }
       }
     },
-    "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
+    "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj",
+        "projectUniqueName": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj",
         "projectName": "shopapp.entity",
-        "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj",
+        "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj",
         "packagesPath": "C:\\Users\\atoka\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\obj\\",
+        "outputPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\atoka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -193,14 +193,14 @@
         }
       }
     },
-    "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj": {
+    "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj",
+        "projectUniqueName": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj",
         "projectName": "shopapp.webui",
-        "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj",
+        "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\shopapp.webui.csproj",
         "packagesPath": "C:\\Users\\atoka\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\obj\\",
+        "outputPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.webui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\atoka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -217,14 +217,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj": {
-                "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj"
+              "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj": {
+                "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj"
               },
-              "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj": {
-                "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj"
+              "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj": {
+                "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.data\\shopapp.data.csproj"
               },
-              "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
-                "projectPath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj"
+              "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj": {
+                "projectPath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.entity\\shopapp.entity.csproj"
               }
             }
           }

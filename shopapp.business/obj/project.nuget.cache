@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fYf4MHTtR6XDHech0iapdBaOLvVZSvMBUudUtZPv0ryxRt/hEb4NUG+S35+pcdJ1WSDAPZF2rJiP07rTaAPMqQ==",
+  "dgSpecHash": "KbgMPBfLYw/pT0OKdBHY395kNZ0gjDqRY1fTkWL1f0U5Z01ZJPxd3QWQXFavSnAgOPiwh3Er38DE274vYA7Yaw==",
   "success": true,
-  "projectFilePath": "d:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj",
+  "projectFilePath": "D:\\Users\\admin\\Desktop\\Yazılım\\1- Github & Sertifikalar\\Github\\Projeler\\1- Shop Application\\shopapp\\shopapp.business\\shopapp.business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\atoka\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\atoka\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

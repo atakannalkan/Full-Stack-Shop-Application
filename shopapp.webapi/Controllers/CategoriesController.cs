@@ -41,7 +41,10 @@ namespace shopapp.webapi.Controllers
         public IActionResult CreateCategory(Category entity)
         {
             _categoryService.Create(entity);
-            return CreatedAtAction(nameof(GetCategory), new {id = entity.CategoryId}, entity);
+            return CreatedAtAction(nameof(GetCategory), new {id = entity.CategoryId}, entity); // Kullanıcıya oluşan entity bilgisini, otomatik olarak 201 (Eklendi) kodu ile gönderiyoruz.
+            // 1- "nameof(GetCategory)" => Burada metodu çağırıyoruz, eklenen veriyi almak için.
+            // 2- "new {id = entity.CategoryId}" => Action metoduna gönderdiğimiz "ID" bilgisi.
+            // 3- "entity" => veritabanına eklenen veriyi gönderiyoruz.
         }
 
         [HttpDelete("{id}")]
@@ -57,9 +60,14 @@ namespace shopapp.webapi.Controllers
             return NoContent();
         }
 
-        [HttpPut]
-        public IActionResult UpdateCategory(Category entity)
+        [HttpPut("{id}")]
+        public IActionResult UpdateCategory(int id, Category entity)
         {
+            if (id != entity.CategoryId)
+            {
+                return BadRequest(); // 400 Error !
+            }
+
             var category = _categoryService.GetById(entity.CategoryId);
             if (category == null)
             {
@@ -70,7 +78,7 @@ namespace shopapp.webapi.Controllers
             category.Url = entity.Url;
 
             _categoryService.Update(category);
-            return CreatedAtAction(nameof(GetCategory), new {id = category.CategoryId}, entity);
+            return NoContent();
         }
     }
 }
