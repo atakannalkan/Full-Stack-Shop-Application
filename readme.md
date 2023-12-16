@@ -28,7 +28,7 @@ yönetiminde .NET Core ile birlikte gelen **Entity Framework** aracındaki LINQ(
 * Web API DTO (Data Transfer Object)
 * Web API Cors (Cross-Origin Resource Sharing)
 
-## Web Api
+## Web API
 
 API (Application Programming Interface) kısmında Web katmanındaki gibi, Business (İş) katmanındaki metotlar çağrılarak **GET** (Verileri Almak), **POST** (Verileri Kaydetmek), **DELETE** (Verileri Silmek) ve **PUT** (Verileri Güncellemek) gibi standart işlemler yapıldı.
 
